@@ -1,0 +1,76 @@
+@use '../abstracts/' as abs;
+
+.rating-container {
+    background-color: abs.$neutral-dark-blue;
+
+    & > *:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    & > img {
+        background-color: abs.$neutral-medium-grey;
+        border-radius: 50%;
+        display: flex;
+        padding: .75em;
+        margin-bottom: 2em;
+        max-width: 100%;
+    }
+
+    & > h1 {
+        color: abs.$neutral-white;
+        font-size: 26px;
+    }
+
+    & > p {
+        color: abs.$neutral-light-grey;
+        font-size: abs.$font-size-paragraph;
+        line-height: 1.4;
+    }
+
+    .rating-submit-button {
+        @include abs.resetInput(true);
+        background-color: abs.$primary-orange;
+        border-radius: 5em;
+        color: abs.$neutral-white;
+        display: block;
+        font-size: abs.$font-size-paragraph;
+        letter-spacing: 2px;
+        padding: 1em 1em .75em;
+        text-transform: uppercase;
+        width: 100%;
+        transition: all 350ms ease;
+
+        &:where(:hover, :focus) {
+            background-color: abs.$neutral-white;
+            color: abs.$primary-orange;
+        }
+    }
+}
+
+.rating-list {
+    @include abs.flex(space-between, center);
+    .circle {
+        @include abs.flex(center, center);
+        @include abs.resetInput(true);
+        background-color: abs.$neutral-medium-grey;
+        border-radius: 50%;
+        color: abs.$neutral-light-grey;
+        font-size: abs.$font-size-paragraph;
+        font-weight: abs.$overpass-bold;
+        margin-block: .75em;
+        height: 3.5em;
+        width: 3.5em;
+        padding-top: .25em;
+        transition: all 350ms ease;
+
+        &:where(:hover, :focus) {
+            background-color: abs.$primary-orange;
+            color: abs.$neutral-white;
+        }
+
+        &[current-rate=true] {
+            background-color: abs.$neutral-light-grey;
+            color: abs.$neutral-white
+        }
+    }
+}

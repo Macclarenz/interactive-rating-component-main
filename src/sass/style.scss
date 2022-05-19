@@ -1,0 +1,26 @@
+@use './components/rating';
+@use './components/thankyou';
+@use './abstracts/' as abs;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include abs.flex(center, center, column);
+    background-color: abs.$neutral-very-dark-blue;
+    height: 100vh;
+}
+
+.box-container {
+    @include abs.centerContainer(min(90%, 400px));
+    background-color: abs.$neutral-dark-blue;
+    border-radius: 1em;
+    padding: 2em;
+}
+
+:where(body) h1, p, button {
+    font-family: abs.$overpass;
+}

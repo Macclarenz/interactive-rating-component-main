@@ -1,0 +1,29 @@
+@use '../abstracts/' as abs;
+
+.thank-you-container {
+    @include abs.flex(center, center, column, nowrap, 1em);
+
+    & > img {
+        max-width: 100%;
+    }
+
+    & > h1 {
+        color: abs.$neutral-white;
+        font-size: 26px;
+        margin-top: .75em;
+    }
+
+    & > p:not(:first-child) {
+        color: abs.$neutral-light-grey;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .selected-rate {
+        background-color: abs.$neutral-medium-grey;
+        border-radius: 5em;
+        color: abs.$primary-orange !important;
+        font-size: abs.$font-size-paragraph;
+        padding: .5em .75em .25em;
+    }
+}

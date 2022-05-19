@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$primary-orange: hsl(25, 97%, 53%);
+
+$neutral-white: hsl(0, 0%, 100%);
+$neutral-light-grey: hsl(217, 12%, 63%);
+$neutral-medium-grey: #262f38;
+$neutral-dark-blue: #19202a;
+$neutral-very-dark-blue: hsl(216, 12%, 8%);
+
+$cta-bg-fill-color: $primary-orange;
+$bg-color: $neutral-very-dark-blue;
+$header-text-color: $neutral-white;
+$text-color: $neutral-light-grey;
+$circle-bg-color: $neutral-medium-grey;
+
+$font-size-paragraph: 15px;
+$overpass: 'Overpass', sans-serif;
+$overpass-weight: (
+    regular: 400,
+    bold: 700
+);
+$overpass-regular: map-get($overpass-weight, regular);
+$overpass-bold: map-get($overpass-weight, bold);

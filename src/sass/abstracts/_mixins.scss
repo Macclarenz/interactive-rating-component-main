@@ -1,0 +1,44 @@
+@mixin flex($justify, $align, $direction: row, $wrap: nowrap, $gap: 0) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    gap: $gap
+}
+
+@mixin centerContainer($width) {
+    margin: 0 auto;
+    width: $width;
+}
+
+@mixin resetInput($isButton: false) {
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    @if $isButton {
+        cursor: pointer;
+    };
+}
+
+@mixin ctaEvent($bg-color, $color) {
+    background-color: $bg-color;
+    color: $color;
+}
+
+@mixin stagger($el, $delay, $start, $end) {
+    @if $start>$end {
+        @error 'the starting value is greater than end value';
+    }
+
+    @else {
+        @if $el=='.circle' {
+            @for $i from start to end {
+                .circle:nth-last-of-type(#{$i}) {
+                    transition-delay: calc($delay * $i);
+                }
+            }
+        }
+    }
+}
